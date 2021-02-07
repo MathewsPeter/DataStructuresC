@@ -7,10 +7,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 1
+#define ENABLE_ARRAY 0
+#define ENABLE_STACK 1
 #include "array_pub.h"
+#include "stack_pub.h"
 
-void main(void)
+int main(void)
 {
 
 	#if ENABLE_ARRAY == 1
@@ -23,4 +25,13 @@ void main(void)
 	array_printall();
 	#endif
 
+	#if ENABLE_STACK == 1
+	stack_push(2);
+	stack_push(1);
+	stack_pop();
+	stack_pop();
+	stack_pop();
+	#endif
+
+	return 1;
 }
