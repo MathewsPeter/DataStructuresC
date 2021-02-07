@@ -7,10 +7,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 0
+#define ENABLE_ARRAY 1
 #define ENABLE_STACK 1
-#include "array_pub.h"
-#include "stack_pub.h"
+
+#include "array.h"
+#include "stack.h"
 
 int main(void)
 {

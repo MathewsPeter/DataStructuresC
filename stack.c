@@ -6,8 +6,13 @@
  */
 
 #include<stdio.h>
-#include "stack_pub.h"
-#include "stack_priv.h"
+
+void stack_push(int);
+void stack_pop(void);
+
+int stack_size = 10;
+int stack[10];
+int stack_top = -1;
 
 void stack_push(int n)
 {

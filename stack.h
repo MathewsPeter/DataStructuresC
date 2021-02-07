@@ -5,10 +5,10 @@
  *      Author: Mathews Peter
  */
 
-#ifndef STACK_PUB_H_
-#define STACK_PUB_H_
+#ifndef STACK_H_
+#define STACK_H_
 
 extern void stack_push(int);
 extern void stack_pop(void);
 
-#endif /* STACK_PUB_H_ */
+#endif /* STACK_H_ */

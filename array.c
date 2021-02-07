@@ -5,9 +5,14 @@
  *      Author: Mathews Peter
  */
 
-#include "array_pub.h"
-#include "array_priv.h"
-#include "stdio.h"
+#include<stdio.h>
+
+void array_insertni(int,int);
+void array_delete(int);
+void array_printall(void);
+
+#define array_size 10
+int array[array_size]={'\0'};
 
 //insert value n to index i
 void array_insertni(int n, int i)
@@ -19,11 +24,6 @@ void array_insertni(int n, int i)
 		}
 	else
 		printf("Index error while inserting value %d to array index %d. Array size is %d.\n",n,i, array_size);
-}
-
-void array_insertn(int n)
-{
-
 }
 
 //if value n is present in the array, replace all occurrences with '\0'
