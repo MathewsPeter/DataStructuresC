@@ -19,9 +19,9 @@ int main(void)
 {
 	#if ENABLE_ARRAY == 1
 	array_insertni(1,0);
-	array_insertni(2,1);
 	array_insertni(9,2);
 	array_printall();
+	array_insertni(9,10);
 	array_delete(6);
 	array_delete(1);
 	array_printall();
@@ -30,10 +30,10 @@ int main(void)
 	#if ENABLE_LINKEDLIST == 1
 
 	linkedlist_length();
-	linkedlist_insertn(1);
-	linkedlist_insertn(2);
+	linkedlist_insertleft(2);
+	linkedlist_insertleft(1);
 	linkedlist_length();
-	linkedlist_insertn(3);
+	linkedlist_insertright(3);
 	linkedlist_printall();
 	#endif
 

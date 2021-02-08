@@ -13,15 +13,29 @@ struct node
 	int data;
 	struct node* next;
 };
-struct node *head = NULL;
-struct node *current = NULL;
 
-void linkedlist_insertn(int n)
+struct node *head = NULL;
+
+void linkedlist_insertleft(int n)
 {
 	struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	newnode->data = n;
 	newnode->next = head;
 	head = newnode;
+	printf("Value %d is inserted at left side of linked-list.\n", n);
+}
+
+void linkedlist_insertright(int n)
+{
+	struct node* newnode = (struct node*)malloc(sizeof(struct node));
+	newnode->data = n;
+	newnode->next = NULL;
+
+	struct node *ptr = head;
+	while(ptr->next!=NULL)
+		ptr = ptr->next;
+	ptr->next = newnode;
+	printf("Value %d is inserted at right side of linked-list.\n", n);
 }
 
 void linkedlist_printall(void)
