@@ -7,15 +7,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 1
-#define ENABLE_STACK 1
+#define ENABLE_ARRAY 0
+#define ENABLE_LINKEDLIST 1
+#define ENABLE_STACK 0
 
 #include "array.h"
 #include "stack.h"
+#include "linkedlist.h"
 
 int main(void)
 {
-
 	#if ENABLE_ARRAY == 1
 	array_insertni(1,0);
 	array_insertni(2,1);
@@ -26,6 +27,16 @@ int main(void)
 	array_printall();
 	#endif
 
+	#if ENABLE_LINKEDLIST == 1
+
+	linkedlist_length();
+	linkedlist_insertn(1);
+	linkedlist_insertn(2);
+	linkedlist_length();
+	linkedlist_insertn(3);
+	linkedlist_printall();
+	#endif
+
 	#if ENABLE_STACK == 1
 	stack_push(2);
 	stack_push(1);
@@ -33,6 +44,8 @@ int main(void)
 	stack_pop();
 	stack_pop();
 	#endif
+
+
 
 	return 1;
 }
