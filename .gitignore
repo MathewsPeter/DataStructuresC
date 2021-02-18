@@ -2,3 +2,6 @@ Debug/*
 .cproject
 .project
 .settings/
+/Debug/
+a.out
+*.o

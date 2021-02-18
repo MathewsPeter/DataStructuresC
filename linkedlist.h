@@ -1,8 +1,10 @@
-/*
- * linkedlist.h
+/**
+ * @file linkedlist.h
+ * @author  Mathews Peter
  *
- *  Created on: 08-Feb-2021
- *      Author: thekk
+ * @section DESCRIPTION
+ * Extern declarations of API - function call - interfaces of LinkedList
+ * defined in linkedlist.c
  */
 
 #ifndef LINKEDLIST_H_

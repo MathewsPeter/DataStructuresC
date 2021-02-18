@@ -8,12 +8,12 @@
 #include <stdlib.h>
 
 #define ENABLE_ARRAY 0
-#define ENABLE_LINKEDLIST 0
-#define ENABLE_STACK 1
+#define ENABLE_LINKEDLIST 1
+#define ENABLE_STACK 0
 
 #include "array.h"
-#include "stack.h"
 #include "linkedlist.h"
+#include "stack.h"
 
 int main(void)
 {
@@ -32,16 +32,18 @@ int main(void)
 	#endif
 
 	#if ENABLE_LINKEDLIST == 1
-
+	printf("LinkedList functions:\n");
 	linkedlist_length();
 	linkedlist_insertleft(2);
 	linkedlist_insertleft(1);
 	linkedlist_length();
 	linkedlist_insertright(3);
 	linkedlist_printall();
+	printf("\n\n");
 	#endif
 
 	#if ENABLE_STACK == 1
+	printf("Stack functions:\n");
 	stack_push(1);
 	stack_push(2);
 	stack_push(3);
@@ -55,11 +57,8 @@ int main(void)
 	stack_pop();
 	stack_pop();
 	stack_pop();
-
-
+	printf("\n\n");
 	#endif
-
-
 
 	return 1;
 }
