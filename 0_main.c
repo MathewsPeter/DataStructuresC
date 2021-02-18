@@ -1,5 +1,5 @@
 /*
- * main.c
+ * 0_main.c
  *
  *  Created on: 07-Feb-2021
  *      Author: Mathews Peter
@@ -8,8 +8,8 @@
 #include <stdlib.h>
 
 #define ENABLE_ARRAY 0
-#define ENABLE_LINKEDLIST 1
-#define ENABLE_STACK 0
+#define ENABLE_LINKEDLIST 0
+#define ENABLE_STACK 1
 
 #include "array.h"
 #include "stack.h"
@@ -18,13 +18,17 @@
 int main(void)
 {
 	#if ENABLE_ARRAY == 1
-	array_insertni(1,0);
-	array_insertni(9,2);
+	printf("Array functions:\n");
+	array_fillall(200);
 	array_printall();
-	array_insertni(9,10);
-	array_delete(6);
-	array_delete(1);
+	array_insertni(13,0);
+	array_insertni(45,1);
+	array_insertni(99,2);
 	array_printall();
+	array_deleten(13);
+	array_deleten(13);
+	array_printall();
+	printf("\n\n");
 	#endif
 
 	#if ENABLE_LINKEDLIST == 1
@@ -38,11 +42,21 @@ int main(void)
 	#endif
 
 	#if ENABLE_STACK == 1
-	stack_push(2);
 	stack_push(1);
+	stack_push(2);
+	stack_push(3);
+	stack_push(4);
+	stack_push(5);
+	stack_push(6);
+	stack_peek();
 	stack_pop();
 	stack_pop();
 	stack_pop();
+	stack_pop();
+	stack_pop();
+	stack_pop();
+
+
 	#endif
 
 
