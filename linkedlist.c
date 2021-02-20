@@ -24,13 +24,12 @@ Insert value n to left side (near HEAD end) of the LinkedList
 @return void
 */
 void linkedlist_insertleft(int n)
-{	printf("\nInside function linkedlist_insertleft:\n");
-	struct node* newnode = (struct node*)malloc(sizeof(struct node));
+{	struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	newnode->data = n;
 	newnode->next = head;
 
 	head = newnode;
-	printf("Value %d is inserted at left side of LinkedList.\n", n);
+	printf("%d inserted at left\n", n);
 }
 
 
@@ -41,8 +40,7 @@ Insert value n to right side (near NULL end) of the LinkedList
 @return void
 */
 void linkedlist_insertright(int n)
-{	printf("\nInside function linkedlist_insertright:\n");
-	struct node* newnode = (struct node*)malloc(sizeof(struct node));
+{	struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	newnode->data = n;
 	newnode->next = NULL;
 
@@ -50,7 +48,7 @@ void linkedlist_insertright(int n)
 	while(ptr->next!=NULL)
 		ptr = ptr->next;
 	ptr->next = newnode;
-	printf("Value %d is inserted at right side of LinkedList.\n", n);
+	printf("%d inserted at right\n", n);
 }
 
 /**
@@ -60,16 +58,14 @@ Print all values of the LinkedList
 @return void
 */
 void linkedlist_printall(void)
-{
-	printf("\nInside function linkedlist_printall:\n");
-	struct node *ptr = head;
-	printf("LinkedList elements are: ");
+{	struct node *ptr = head;
+	printf("LinkedList: <");
 
 	while(ptr != NULL)
-	{
-		printf("%d, ",ptr->data);
+	{	printf("%d, ",ptr->data);
 		ptr = ptr->next;
 	}
+	printf(">\n");
 }
 
 /**
@@ -81,11 +77,11 @@ Print length (number of elements) LinkedList
 void linkedlist_length(void)
 {
    int length = 0;
-   printf("\nInside function linkedlist_length:\n");
+   printf("LinkedList length: ");
    struct node *ptr = head;
 
    for(ptr; ptr != NULL; ptr = ptr->next)
    {	length++;
    }
-   printf("Length of LinkedList = %d\n", length);
+   printf("%d\n", length);
 }

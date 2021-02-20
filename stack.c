@@ -24,15 +24,12 @@ Push(insert) value to top of Stack
 @return void
 */
 void stack_push(int n)
-{
-	printf("\nInside function stack_push:\n");
-
-	if(stack_top == stack_size_max)
-	{	printf("The stack is full. Unable to push value %d.\n",n);
+{	if(stack_top == stack_size_max)
+	{	printf("Stack full. Unable to push %d\n",n);
 	}
 	else
 	{	stack[++stack_top] = n;
-		printf("Value %d is pushed to stack.\n",n);
+		printf("%d pushed\n",n);
 	}
 }
 
@@ -44,13 +41,11 @@ Pop (remove and view) value from top of Stack
 @return void
 */
 void stack_pop(void)
-{
-	printf("\nInside function stack_pop:\n");
-	if(stack_top == 0)
-	{	printf("Stack is empty. Unable to pop further.\n");
+{	if(stack_top == 0)
+	{	printf("Stack empty. Unable to pop\n");
 	}
 	else
-	{	printf("Value popped is %d\n", stack[stack_top--]);
+	{	printf("%d popped\n", stack[stack_top--]);
 	}
 }
 
@@ -62,13 +57,11 @@ View the value from top of Stack. Stack is not modified.
 @return void
 */
 void stack_peek(void)
-{
-	printf("\nInside function stack_peek:\n");
-	if(stack_top == 0)
-	{	printf("Stack is empty. Unable to peek.\n");
+{	if(stack_top == 0)
+	{	printf("Stack empty. Unable to peek\n");
 	}
 	else
-	{	printf("Value at top of stack is %d\n", stack[stack_top]);
+	{	printf("%d is at stack top\n", stack[stack_top]);
 	}
 
 }

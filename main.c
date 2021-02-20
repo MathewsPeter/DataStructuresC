@@ -7,13 +7,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 0
+#define ENABLE_ARRAY 1
 #define ENABLE_LINKEDLIST 1
-#define ENABLE_STACK 0
+#define ENABLE_STACK 1
+#define ENABLE_QUEUE 1
 
 #include "array.h"
 #include "linkedlist.h"
 #include "stack.h"
+#include "queue.h"
 
 int main(void)
 {
@@ -32,7 +34,6 @@ int main(void)
 	#endif
 
 	#if ENABLE_LINKEDLIST == 1
-	printf("LinkedList functions:\n");
 	linkedlist_length();
 	linkedlist_insertleft(2);
 	linkedlist_insertleft(1);
@@ -57,6 +58,40 @@ int main(void)
 	stack_pop();
 	stack_pop();
 	stack_pop();
+	printf("\n\n");
+	#endif
+
+	#if ENABLE_QUEUE == 1
+	printf("Queue functions:\n");
+	queue_enqueue(1);
+	queue_enqueue(2);
+	queue_enqueue(3);
+	queue_printall();
+	queue_enqueue(4);
+	queue_enqueue(5);
+	queue_enqueue(6);
+	queue_enqueue(7);
+	queue_printall();
+	queue_dequeue();
+	queue_dequeue();
+	queue_dequeue();
+	queue_dequeue();
+	queue_printall();
+	queue_length();
+	queue_dequeue();
+	queue_dequeue();
+	queue_dequeue();
+	queue_enqueue(1);
+	queue_enqueue(2);
+	queue_enqueue(3);
+	queue_dequeue();
+	queue_dequeue();
+	queue_enqueue(4);
+	queue_enqueue(5);
+	queue_enqueue(6);
+	queue_enqueue(7);
+	queue_printall();
+	queue_length();
 	printf("\n\n");
 	#endif
 

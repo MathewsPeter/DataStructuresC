@@ -25,14 +25,12 @@ Insert value n to index i of the array
 @return void
 */
 void array_insertni(int n, int i)
-{
-	printf("\nInside function array_insertni:\n");
-	if(i < array_size)
+{	if(i < array_size)
 	{	array[i] = n;
-		printf("Value %d inserted at array index %d.\n", n, i);
+		printf("%d inserted at [%d]\n", n, i);
 	}
 	else
-	{	printf("Index error while inserting value %d to array index %d. Array size is %d.\n",n,i, array_size);
+	{	printf("Error inserting %d: Index %d more than array array size is %d.\n",n, i, array_size);
 	}
 }
 
@@ -47,19 +45,17 @@ void array_deleten(int n)
 {
 	int i;
 	int flg_IsnDeleted=0;
-
-	printf("\nInside function array_delete:\n");
 	for(i=0;i<array_size;++i)
 	{
 		if(array[i] == n)
 		{	array[i] = '\0';
-			printf("Value %d is deleted from array index %d.\n", n, i);
+			printf("Value %d deleted at [%d]\n", n, i);
 			flg_IsnDeleted = 1;
 		}
 	}
 
 	if (flg_IsnDeleted == 0)
-	{	printf("Value %d is not found in array. Unable to delete.\n",n);
+	{	printf("%d not found in array. Unable to delete\n",n);
 	}
 }
 
@@ -73,14 +69,14 @@ Print all elements in the array
 void array_printall(void)
 {
 	int i;
-	printf("\nInside function array_printall:\n");
+	printf("Array[0 to %d]: [", array_size);
 	for(i=0;i<array_size;++i)
 	{	if(array[i]!='\0')
 			printf("%d, ", array[i]);
 		else
 			printf("NULL, ");
 	}
-	printf("\n");
+	printf("]\n");
 }
 
 
@@ -93,10 +89,8 @@ Fill all positions in the array with a specific value
 void array_fillall(int n)
 {
 	int i;
-	printf("\nInside function array_fillall:\n");
 	for(i=0;i<array_size;++i)
 	{	array[i] = n;
 	}
-
-	printf("All array is filled with value %d.\n", n);
+	printf("Array filled with %d\n", n);
 }
