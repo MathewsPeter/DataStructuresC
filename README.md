@@ -1,3 +1,3 @@
 # DataStructuresC
 DataStructures implemented in C
-Array, Linkedlist, Stack.
+Array, Linkedlist, Stack, Queue.
