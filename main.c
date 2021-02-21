@@ -7,15 +7,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 1
-#define ENABLE_LINKEDLIST 1
-#define ENABLE_STACK 1
-#define ENABLE_QUEUE 1
+#define ENABLE_ARRAY 0
+#define ENABLE_LINKEDLIST 0
+#define ENABLE_STACK 0
+#define ENABLE_QUEUE 0
+#define ENABLE_BINARYTREE 1
 
 #include "array.h"
 #include "linkedlist.h"
 #include "stack.h"
 #include "queue.h"
+#include "binarytree.h"
 
 int main(void)
 {
@@ -95,5 +97,14 @@ int main(void)
 	printf("\n\n");
 	#endif
 
+	#if ENABLE_BINARYTREE == 1
+	printf("Binary Tree functions:\n");
+	binarytree_insertn(1);
+	binarytree_insertn(2);
+	binarytree_printall();
+	binarytree_insertn(3);
+	binarytree_printall();
+	printf("\n\n");
+	#endif
 	return 1;
 }

@@ -6,7 +6,7 @@
  * API - function call - interfaces of Array in C language
  */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void array_insertni(int,int);//insert value n to index i
 void array_deleten(int);//if value n is present in the array, replace all occurrences with '\0'

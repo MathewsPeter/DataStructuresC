@@ -7,12 +7,13 @@
  * Queue is implemented using Array
  */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void queue_enqueue(int);
 void queue_dequeue(void);
 void queue_printall(void);
 void queue_length(void);
+
 #define QUEUE_SIZE_MAX 5
 int queue_size_max = QUEUE_SIZE_MAX;
 int queue_size_curr = 0;

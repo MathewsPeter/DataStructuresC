@@ -7,10 +7,11 @@
  * Stack is implemented using Array
  */
 
-#include<stdio.h>
+#include <stdio.h>
 
 void stack_push(int);
 void stack_pop(void);
+
 #define STACK_SIZE_MAX 5
 int stack_size_max = STACK_SIZE_MAX;
 int stack[STACK_SIZE_MAX+1];

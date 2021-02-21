@@ -3,8 +3,7 @@
  * @author  Mathews Peter
  *
  * @section DESCRIPTION
- * Extern declarations of API - function call - interfaces of Stack
- * defined in stack.c
+ * Extern declarations of API - function call - interfaces of Stack defined in stack.c
  */
 
 #ifndef STACK_H_

@@ -6,15 +6,20 @@
  * API - function call - interfaces of LinkedList in C language
  */
 
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>//for malloc() function
 
-struct node
+void linkedlist_insertleft(int);
+void linkedlist_insertright(int);
+void linkedlist_printall(void);
+void linkedlist_length(void);
+
+struct LLnode
 {	int data;
-	struct node* next;
+	struct LLnode* next;
 };
 
-struct node *head = NULL;
+struct LLnode* LLhead = NULL;
 
 
 /**
@@ -24,11 +29,11 @@ Insert value n to left side (near HEAD end) of the LinkedList
 @return void
 */
 void linkedlist_insertleft(int n)
-{	struct node* newnode = (struct node*)malloc(sizeof(struct node));
-	newnode->data = n;
-	newnode->next = head;
+{	struct LLnode* newLLnode = (struct LLnode*)malloc(sizeof(struct LLnode));
+	newLLnode->data = n;
+	newLLnode->next = LLhead;
 
-	head = newnode;
+	LLhead = newLLnode;
 	printf("%d inserted at left\n", n);
 }
 
@@ -40,14 +45,14 @@ Insert value n to right side (near NULL end) of the LinkedList
 @return void
 */
 void linkedlist_insertright(int n)
-{	struct node* newnode = (struct node*)malloc(sizeof(struct node));
-	newnode->data = n;
-	newnode->next = NULL;
+{	struct LLnode* newLLnode = (struct LLnode*)malloc(sizeof(struct LLnode));
+	newLLnode->data = n;
+	newLLnode->next = NULL;
 
-	struct node *ptr = head;
+	struct LLnode *ptr = LLhead;
 	while(ptr->next!=NULL)
 		ptr = ptr->next;
-	ptr->next = newnode;
+	ptr->next = newLLnode;
 	printf("%d inserted at right\n", n);
 }
 
@@ -58,7 +63,7 @@ Print all values of the LinkedList
 @return void
 */
 void linkedlist_printall(void)
-{	struct node *ptr = head;
+{	struct LLnode *ptr = LLhead;
 	printf("LinkedList: <");
 
 	while(ptr != NULL)
@@ -78,10 +83,12 @@ void linkedlist_length(void)
 {
    int length = 0;
    printf("LinkedList length: ");
-   struct node *ptr = head;
+   struct LLnode *ptr = LLhead;
 
-   for(ptr; ptr != NULL; ptr = ptr->next)
-   {	length++;
+   while(ptr!=NULL)
+   {   length++;
+   	   ptr = ptr->next;
+
    }
    printf("%d\n", length);
 }
