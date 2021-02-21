@@ -7,19 +7,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 0
-#define ENABLE_LINKEDLIST 0
-#define ENABLE_STACK 0
-#define ENABLE_QUEUE 0
-#define ENABLE_BINARYTREE 0
+#define ENABLE_ARRAY 1
+#define ENABLE_LINKEDLIST 1
+#define ENABLE_STACK 1
+#define ENABLE_QUEUE 1
+#define ENABLE_BINARYTREE 1
 #define ENABLE_BINARYSEARCHTREE 1
 
-#include "array.h"
-#include "linkedlist.h"
-#include "stack.h"
-#include "queue.h"
-#include "binarytree.h"
-#include "binarysearchtree.h"
+#include "Array/array.h"
+#include "LinkedList/linkedlist.h"
+#include "Stack/stack.h"
+#include "Queue/queue.h"
+#include "BinaryTree/binarytree.h"
+#include "BinarySearchTree/binarysearchtree.h"
 
 int main(void)
 {
