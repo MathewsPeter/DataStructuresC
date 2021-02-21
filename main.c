@@ -11,13 +11,15 @@
 #define ENABLE_LINKEDLIST 0
 #define ENABLE_STACK 0
 #define ENABLE_QUEUE 0
-#define ENABLE_BINARYTREE 1
+#define ENABLE_BINARYTREE 0
+#define ENABLE_BINARYSEARCHTREE 1
 
 #include "array.h"
 #include "linkedlist.h"
 #include "stack.h"
 #include "queue.h"
 #include "binarytree.h"
+#include "binarysearchtree.h"
 
 int main(void)
 {
@@ -106,5 +108,16 @@ int main(void)
 	binarytree_printall();
 	printf("\n\n");
 	#endif
+
+	#if ENABLE_BINARYSEARCHTREE == 1
+	printf("Binary Search Tree functions:\n");
+	binarysearchtree_insertn(1);
+	binarysearchtree_insertn(2);
+	binarysearchtree_breadthfirsttraverse();
+	binarysearchtree_depthfirsttraverse();
+	binarysearchtree_insertn(3);
+	printf("\n\n");
+	#endif
+
 	return 1;
 }
