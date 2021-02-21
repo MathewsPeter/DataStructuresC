@@ -9,9 +9,9 @@
 #ifndef BINARYSEARCHTREE_H_
 #define BINARYSEARCHTREE_H_
 
-extern void binarysearchtree_insertn(int);
-extern void binarysearchtree_deleten(int);
-extern void binarysearchtree_depthfirsttraverse(void);
-extern void binarysearchtree_breadthfirsttraverse(void);
+extern struct BSTNode* binarysearchtree_insertn(struct BSTNode*, int);
+extern void binarysearchtree_inordertraverse(struct BSTNode*);
+
+extern struct BSTNode* BSTHead;
 
 #endif /* BINARYSEARCHTREE_H_ */

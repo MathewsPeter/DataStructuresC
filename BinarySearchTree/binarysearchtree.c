@@ -3,44 +3,53 @@
  * @author  Mathews Peter
  *
  * @section DESCRIPTION
- * API - function call - interfaces of Binary Tree in C language
+ * API - function call - interfaces of Binary Search Tree in C language
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void binarysearchtree_insertn(int);//insert value
+struct BSTNode* binarysearchtree_insertn(struct BSTNode*, int);//insert value
 void binarysearchtree_deleten(int);//delete value if present in tree
-void binarysearchtree_printall(void);//print all elements in the Binary Tree
-void binarysearchtree_printdepth(void);//print all elements in the Binary Tree
-void binarysearchtree_depthfirsttraverse(void);//print all elements in the Binary Tree
-void binarysearchtree_breadthfirsttraverse(void);//print all elements in the Binary Tree
+void binarysearchtree_inordertraverse(struct BSTNode*);//print all elements in the Binary Tree
 
-struct BSTnode
-{
-	struct BSTnode* left;
-	struct BSTnode* right;
+struct BSTNode
+{	struct BSTNode* left;
+	struct BSTNode* right;
 	int data;
 };
-struct BSTnode* BSTHead = NULL;
+struct BSTNode* BSTHead = NULL;
 
 
 /**
 Insert value n
 
+@param  struct BSTNode* node - Recursively traversed node
 @param  n, the value to be inserted
 @return void
+
 */
-void binarysearchtree_insertn(int n)
-{	struct BSTnode* newBSTnode = (struct BSTnode*)(malloc(sizeof(struct BSTnode)));
-	newBSTnode->data = n;
-	newBSTnode->left = NULL;
-	newBSTnode->right = BSTHead;
-	BSTHead = newBSTnode;
-	printf("%d inserted on top\n", n);
+struct BSTNode* binarysearchtree_insertn(struct BSTNode* node, int n)
+{	if(node == NULL)
+	{	struct BSTNode* newBSTNode = (struct BSTNode*)(malloc(sizeof(struct BSTNode)));
+		newBSTNode->data = n;
+		newBSTNode->left = NULL;
+		newBSTNode->right = NULL;
+		if(BSTHead==NULL)
+			BSTHead = newBSTNode;
+		printf("%d inserted\n", n);
+		return newBSTNode;
+	}
+	else if(n < node->data)
+	{
+		node->left = binarysearchtree_insertn(node->left, n);
+	}
+	else if(n > node->data)
+	{
+		node->right = binarysearchtree_insertn(node->right, n);
+	}
+return node;
 }
-
-
 /**
 if value n is present in the Binary Tree, delete it
 
@@ -48,41 +57,20 @@ if value n is present in the Binary Tree, delete it
 @return void
 */
 void binarysearchtree_deleten(int n)
-{	struct BSTnode* i;
-	int cnt_nDeleted=0;
-
-	if(BSTHead->data == n)//delete first node
-		BSTHead = BSTHead->right;
-
-	for(i=BSTHead;i!=NULL;i=i->right)
-	{	if(i->right->data == n)
-		{	i->right = i->right->right;
-			cnt_nDeleted++;
-		}
-	}
-
-	printf("%d instances of %d is deleted\n",cnt_nDeleted, n);
-}
-
-
-/**
-Print all elements depth-first
-
-@param  void
-@return void
-*/
-void binarysearchtree_depthfirsttraverse(void)
 {
-
 }
 
 /**
-Print all elements breadth-first
+Print all elements using in-order traversal method
 
-@param  void
+@param struct BSTNode* node - Recursively traversed node
 @return void
 */
-void binarysearchtree_breadthfirsttraverse(void)
-{
-
+void binarysearchtree_inordertraverse(struct BSTNode* node)
+{	if(node->left != NULL)
+		binarysearchtree_inordertraverse(node->left);
+	printf("%d, ", node->data);
+	if(node->right != NULL)
+		binarysearchtree_inordertraverse(node->right);
 }
+

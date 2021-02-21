@@ -7,11 +7,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 1
-#define ENABLE_LINKEDLIST 1
-#define ENABLE_STACK 1
-#define ENABLE_QUEUE 1
-#define ENABLE_BINARYTREE 1
+#define ENABLE_ARRAY 0
+#define ENABLE_LINKEDLIST 0
+#define ENABLE_STACK 0
+#define ENABLE_QUEUE 0
+#define ENABLE_BINARYTREE 0
 #define ENABLE_BINARYSEARCHTREE 1
 
 #include "Array/array.h"
@@ -24,7 +24,7 @@
 int main(void)
 {
 	#if ENABLE_ARRAY == 1
-	printf("Array functions:\n");
+	printf("\n\nArray functions:\n");
 	array_fillall(200);
 	array_printall();
 	array_insertni(13,0);
@@ -44,11 +44,10 @@ int main(void)
 	linkedlist_length();
 	linkedlist_insertright(3);
 	linkedlist_printall();
-	printf("\n\n");
 	#endif
 
 	#if ENABLE_STACK == 1
-	printf("Stack functions:\n");
+	printf("\n\nStack functions:\n");
 	stack_push(1);
 	stack_push(2);
 	stack_push(3);
@@ -62,11 +61,10 @@ int main(void)
 	stack_pop();
 	stack_pop();
 	stack_pop();
-	printf("\n\n");
 	#endif
 
 	#if ENABLE_QUEUE == 1
-	printf("Queue functions:\n");
+	printf("\n\nQueue functions:\n");
 	queue_enqueue(1);
 	queue_enqueue(2);
 	queue_enqueue(3);
@@ -96,27 +94,25 @@ int main(void)
 	queue_enqueue(7);
 	queue_printall();
 	queue_length();
-	printf("\n\n");
 	#endif
 
 	#if ENABLE_BINARYTREE == 1
-	printf("Binary Tree functions:\n");
+	printf("\n\nBinary Tree functions:\n");
 	binarytree_insertn(1);
 	binarytree_insertn(2);
 	binarytree_printall();
 	binarytree_insertn(3);
 	binarytree_printall();
-	printf("\n\n");
 	#endif
 
 	#if ENABLE_BINARYSEARCHTREE == 1
-	printf("Binary Search Tree functions:\n");
-	binarysearchtree_insertn(1);
-	binarysearchtree_insertn(2);
-	binarysearchtree_breadthfirsttraverse();
-	binarysearchtree_depthfirsttraverse();
-	binarysearchtree_insertn(3);
-	printf("\n\n");
+	printf("\n\nBinary Search Tree functions:\n");
+	binarysearchtree_insertn(BSTHead, 2);
+	binarysearchtree_insertn(BSTHead, 1);
+	binarysearchtree_insertn(BSTHead, 3);
+	binarysearchtree_insertn(BSTHead, 1);
+	binarysearchtree_insertn(BSTHead, 4);
+    binarysearchtree_inordertraverse(BSTHead);
 	#endif
 
 	return 1;
