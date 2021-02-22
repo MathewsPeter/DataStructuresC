@@ -1,5 +1,6 @@
 # Linked List
 Sequential structure.
+If number of data elements is unknown and if they can be stored in linear fashion, then use linked-list.
 Nodes in linear order which are linked its neighbours.
 Access is sequential. Random access is not possible.
 

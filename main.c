@@ -9,14 +9,14 @@
 
 #define ENABLE_ARRAY 0
 #define ENABLE_LINKEDLIST 0
-#define ENABLE_STACK 0
+#define ENABLE_STACKARR 1
 #define ENABLE_QUEUE 0
 #define ENABLE_BINARYTREE 0
 #define ENABLE_BINARYSEARCHTREE 1
 
 #include "Array/array.h"
 #include "LinkedList/linkedlist.h"
-#include "Stack/stack.h"
+#include "Stack/stack_using_array.h"
 #include "Queue/queue.h"
 #include "BinaryTree/binarytree.h"
 #include "BinarySearchTree/binarysearchtree.h"
@@ -46,21 +46,28 @@ int main(void)
 	linkedlist_printall();
 	#endif
 
-	#if ENABLE_STACK == 1
-	printf("\n\nStack functions:\n");
-	stack_push(1);
-	stack_push(2);
-	stack_push(3);
-	stack_push(4);
-	stack_push(5);
-	stack_push(6);
-	stack_peek();
-	stack_pop();
-	stack_pop();
-	stack_pop();
-	stack_pop();
-	stack_pop();
-	stack_pop();
+	#if ENABLE_STACKARR == 1
+	printf("\n\nStack(using Array) functions:\n");
+	stackarr_push(1);
+	stackarr_push(2);
+	stackarr_push(3);
+	stackarr_push(4);
+	stackarr_push(5);
+	stackarr_push(6);
+	stackarr_peek();
+	stackarr_pop();
+	stackarr_pop();
+	stackarr_pop();
+	stackarr_pop();
+	stackarr_pop();
+	stackarr_pop();
+	#endif
+
+
+	#if ENABLE_STACKLL == 1
+	printf("\n\nStack(using LinkedList) functions:\n");
+	stackll_push(1);
+	stackll_pop();
 	#endif
 
 	#if ENABLE_QUEUE == 1
