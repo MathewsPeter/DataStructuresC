@@ -37,6 +37,7 @@ void array_insertni(int n, int i)
 
 /**
 if value n is present in the array, replace all occurrences with '\0'
+Memory location cannot be deleted or removed at runtime.
 
 @param  n, the value to be deleted
 @return void

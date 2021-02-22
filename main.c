@@ -109,9 +109,17 @@ int main(void)
 	printf("\n\nBinary Search Tree functions:\n");
 	binarysearchtree_insertn(BSTHead, 2);
 	binarysearchtree_insertn(BSTHead, 1);
+	binarysearchtree_insertn(BSTHead, 5);
 	binarysearchtree_insertn(BSTHead, 3);
 	binarysearchtree_insertn(BSTHead, 1);
 	binarysearchtree_insertn(BSTHead, 4);
+	binarysearchtree_insertn(BSTHead, 7);
+	binarysearchtree_insertn(BSTHead, 6);
+    binarysearchtree_inordertraverse(BSTHead);
+
+    BSTPrintHead(BSTHead);
+    BSTPrint();
+    binarysearchtree_deleten(BSTHead, 7);
     binarysearchtree_inordertraverse(BSTHead);
 	#endif
 
