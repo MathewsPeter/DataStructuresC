@@ -30,8 +30,8 @@ Insert value n
 
 */
 struct BSTNode* binarysearchtree_insertn(struct BSTNode* node, int n)
-{    if(node == NULL)
-    {    struct BSTNode* newBSTNode = (struct BSTNode*)(malloc(sizeof(struct BSTNode)));
+{   if(node == NULL)
+    {   struct BSTNode* newBSTNode = (struct BSTNode*)(malloc(sizeof(struct BSTNode)));
         newBSTNode->data = n;
         newBSTNode->left = NULL;
         newBSTNode->right = NULL;
@@ -64,8 +64,7 @@ if value n is present in the Binary Tree, delete it
 @return void
 */
 struct BSTNode* binarysearchtree_deleten(struct BSTNode* node, int n)
-{
-    if(node == NULL)
+{	if(node == NULL)
         return NULL;
     else if(n < node->data)
         binarysearchtree_deleten(node->left, n);
@@ -73,36 +72,33 @@ struct BSTNode* binarysearchtree_deleten(struct BSTNode* node, int n)
         binarysearchtree_deleten(node->right, n);
     else if(n == node->data)
     {
-        if((node->left == NULL) &&(node->right == NULL))
+        if((node->left == NULL) && (node->right == NULL))
         {   free(node);
-            printf("%d deleted as leaf node\n",n);
-            return NULL;
+            node = NULL;
+        	printf("%d deleted\n",n);
         }
-        if(node->left == NULL)
-        {    node = node->right;
-            free(node->right);
+        else if(node->left == NULL)
+        {   struct BSTNode* temp = node->right;
+			free(temp);
+			printf("%d deleted\n",n);
+			node = node->right;
+        }
+        else if(node->right == NULL)
+        {	struct BSTNode* temp = node->left;
+			free(temp);
             printf("%d deleted\n",n);
-            return NULL;
+			node = node->left;
         }
-        if(node->right == NULL)
-        {    node = node->left;
-            free(node->left);
-            printf("%d deleted\n",n);
-            return NULL;
-        }
-        if((node->left != NULL) &&(node->right != NULL))
-        {
-            struct BSTNode* inordersuc = node->right;
+        else if((node->left != NULL) &&(node->right != NULL))
+        {	struct BSTNode* inordersuc = node->right;
             while(inordersuc->left!=NULL)
                 inordersuc = inordersuc->left;
             node->data = inordersuc->data;
-            inordersuc->data = n;
-            binarysearchtree_deleten(inordersuc, inordersuc->data);
+            binarysearchtree_deleten(node->right, inordersuc->data);
             printf("%d deleted\n",n);
-            return NULL;
         }
-
     }
+return node;
 }
 
 /**
@@ -118,15 +114,3 @@ void binarysearchtree_inordertraverse(struct BSTNode* node)
     if(node->right != NULL)
         binarysearchtree_inordertraverse(node->right);
 }
-
-
-
-
-void BSTPrintHead(struct BSTNode* node)
-{
-	printf("%d\n",node->data);
-}
- void BSTPrint()
- {
-		printf("%d\n",BSTHead->data);
- }

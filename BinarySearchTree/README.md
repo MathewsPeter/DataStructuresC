@@ -16,10 +16,12 @@ Searching uses a divide-and-conquer technique, where successive search space bec
 
 number of nodes = power(2,h), for a full tree.
 
-     O     Level 1
-    /   \
+    O     Level 1
+   / \
   O   O   Level 2
-  /\    /\
-OO OO Level 3
+ /\   /\
+O  O O  O Level 3
 
 Time complexity for insert and delete and insert are log n
+
+Delete function has bugs.
