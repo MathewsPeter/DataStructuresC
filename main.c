@@ -7,16 +7,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 0
-#define ENABLE_LINKEDLIST 0
+#define ENABLE_ARRAY 1
+#define ENABLE_LINKEDLIST 1
 #define ENABLE_STACKARR 1
+#define ENABLE_STACKLL 1
+
 #define ENABLE_QUEUE 0
-#define ENABLE_BINARYTREE 0
+
+#define ENABLE_QUEUEARR 0
+#define ENABLE_QUEUELL 1
+#define ENABLE_BINARYTREE 1
 #define ENABLE_BINARYSEARCHTREE 1
 
 #include "Array/array.h"
 #include "LinkedList/linkedlist.h"
-#include "Stack/stack_using_array.h"
+#include "StackUsingArray/stack_using_array.h"
 #include "Queue/queue.h"
 #include "BinaryTree/binarytree.h"
 #include "BinarySearchTree/binarysearchtree.h"
@@ -66,8 +71,8 @@ int main(void)
 
 	#if ENABLE_STACKLL == 1
 	printf("\n\nStack(using LinkedList) functions:\n");
-	stackll_push(1);
-	stackll_pop();
+	stackarr_push(1);
+	stackarr_pop();
 	#endif
 
 	#if ENABLE_QUEUE == 1
@@ -114,20 +119,18 @@ int main(void)
 
 	#if ENABLE_BINARYSEARCHTREE == 1
 	printf("\n\nBinary Search Tree functions:\n");
+	binarysearchtree_insertn(BSTHead, 1);
 	binarysearchtree_insertn(BSTHead, 2);
-	binarysearchtree_insertn(BSTHead, 1);
-	binarysearchtree_insertn(BSTHead, 5);
 	binarysearchtree_insertn(BSTHead, 3);
-	binarysearchtree_insertn(BSTHead, 1);
 	binarysearchtree_insertn(BSTHead, 4);
-	binarysearchtree_insertn(BSTHead, 7);
+	binarysearchtree_insertn(BSTHead, 5);
 	binarysearchtree_insertn(BSTHead, 6);
-    binarysearchtree_inordertraverse(BSTHead);
-
-    BSTPrintHead(BSTHead);
-    BSTPrint();
-    binarysearchtree_deleten(BSTHead, 7);
-    binarysearchtree_inordertraverse(BSTHead);
+	binarysearchtree_insertn(BSTHead, 7);
+    binarysearchtree_inordertraverse(BSTHead);printf("\n");
+	binarysearchtree_deleten(BSTHead, 2);
+//	binarysearchtree_insertn(BSTHead, 3);
+//	binarysearchtree_insertn(BSTHead, 4);
+    binarysearchtree_inordertraverse(BSTHead);printf("\n");
 	#endif
 
 	return 1;

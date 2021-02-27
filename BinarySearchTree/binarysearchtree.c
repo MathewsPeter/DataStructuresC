@@ -35,7 +35,7 @@ struct BSTNode* binarysearchtree_insertn(struct BSTNode* node, int n)
         newBSTNode->data = n;
         newBSTNode->left = NULL;
         newBSTNode->right = NULL;
-        if(BSTHead==NULL)
+        if(BSTHead == NULL)
             BSTHead = newBSTNode;
         printf("%d inserted\n", n);
         return newBSTNode;
@@ -70,7 +70,7 @@ struct BSTNode* binarysearchtree_deleten(struct BSTNode* node, int n)
         binarysearchtree_deleten(node->left, n);
     else if(node->data < n)
         binarysearchtree_deleten(node->right, n);
-    else if(n == node->data)
+    else
     {
         if((node->left == NULL) && (node->right == NULL))
         {   free(node);
@@ -89,7 +89,7 @@ struct BSTNode* binarysearchtree_deleten(struct BSTNode* node, int n)
             printf("%d deleted\n",n);
 			node = node->left;
         }
-        else if((node->left != NULL) &&(node->right != NULL))
+        else
         {	struct BSTNode* inordersuc = node->right;
             while(inordersuc->left!=NULL)
                 inordersuc = inordersuc->left;
