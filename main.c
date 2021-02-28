@@ -7,16 +7,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 1
-#define ENABLE_LINKEDLIST 1
-#define ENABLE_STACKARR 1
-#define ENABLE_STACKLL 1
+#define ENABLE_ARRAY 0
+#define ENABLE_LINKEDLIST 0
+#define ENABLE_STACKARR 0
+#define ENABLE_STACKLL 0
 
 #define ENABLE_QUEUE 0
 
 #define ENABLE_QUEUEARR 0
-#define ENABLE_QUEUELL 1
-#define ENABLE_BINARYTREE 1
+#define ENABLE_QUEUELL 0
+#define ENABLE_BINARYTREE 0
 #define ENABLE_BINARYSEARCHTREE 1
 
 #include "Array/array.h"
@@ -68,8 +68,7 @@ int main(void)
 	stackarr_pop();
 	#endif
 
-
-	#if ENABLE_STACKLL == 1
+	#if ENABLE_STACARR == 1
 	printf("\n\nStack(using LinkedList) functions:\n");
 	stackarr_push(1);
 	stackarr_pop();
@@ -119,18 +118,60 @@ int main(void)
 
 	#if ENABLE_BINARYSEARCHTREE == 1
 	printf("\n\nBinary Search Tree functions:\n");
-	binarysearchtree_insertn(BSTHead, 1);
-	binarysearchtree_insertn(BSTHead, 2);
-	binarysearchtree_insertn(BSTHead, 3);
-	binarysearchtree_insertn(BSTHead, 4);
-	binarysearchtree_insertn(BSTHead, 5);
-	binarysearchtree_insertn(BSTHead, 6);
-	binarysearchtree_insertn(BSTHead, 7);
-    binarysearchtree_inordertraverse(BSTHead);printf("\n");
-	binarysearchtree_deleten(BSTHead, 2);
-//	binarysearchtree_insertn(BSTHead, 3);
-//	binarysearchtree_insertn(BSTHead, 4);
-    binarysearchtree_inordertraverse(BSTHead);printf("\n");
+    #include"BinarySearchTree/binarysearchtree_node.h"
+
+	struct node *root = NULL;
+	   root = insert(root, 1);
+	   root = insert(root, 2);
+	   root = insert(root, 3);
+	   root = insert(root, 4);
+	   root = insert(root, 5);
+	   root = insert(root, 6);
+	   root = insert(root, 7);
+	   printf("Inorder traversal: ");
+	   inordertraversal(root);
+	   printf("\nDelete 2\n");
+	   root = deleteNode(root, 2);
+	printf("Inorder traversal: ");   inordertraversal(root);
+	   printf("\nDelete 3\n");
+	   root = deleteNode(root, 3);
+	printf("Inorder traversal: ");   inordertraversal(root);
+	   printf("\nDelete 5\n");
+	   root = deleteNode(root, 5);
+	printf("Inorder traversal: ");   inordertraversal(root);
+	printf("\nDelete 7\n");
+	   root = deleteNode(root, 7);
+	printf("Inorder traversal: ");   inordertraversal(root);
+	printf("\nDelete 1\n");
+	   root = deleteNode(root, 1);
+	printf("Inorder traversal: ");   inordertraversal(root);
+
+//	struct node *root = NULL;
+//	printf("check 1\n");
+//	   root = insert(root, 1);
+//	   printf("check 2\n");
+//	   root = insert(root, 2);
+//	   printf("check 3\n");
+//	   root = insert(root, 3);
+//	   root = insert(root, 40);
+//	   root = insert(root, 70);
+//	   root = insert(root, 60);
+//	   root = insert(root, 80);
+//	   printf("Inorder traversal of the given tree \n");
+//
+//	   inordertraversal(root);
+//	   printf("\nDelete 20\n");
+//	   root = deleteNode(root, 20);
+//	   printf("Inorder traversal of the modified tree \n");
+//	   inordertraversal(root);
+//	   printf("\nDelete 30\n");
+//	   root = deleteNode(root, 30);
+//	   printf("Inorder traversal of the modified tree \n");
+//	   inordertraversal(root);
+//	   printf("\nDelete 50\n");
+//	   root = deleteNode(root, 50);
+//	   printf("Inorder traversal of the modified tree \n");
+//	   inordertraversal(root);
 	#endif
 
 	return 1;
