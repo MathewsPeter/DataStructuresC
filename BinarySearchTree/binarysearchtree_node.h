@@ -9,8 +9,8 @@
 #ifndef BINARYSEARCHTREE_NODE_H_
 #define BINARYSEARCHTREE_NODE_H_
 
-
-struct BSTNode{
+struct BSTNode
+    {
    int data;
    struct BSTNode *left, *right;
 };

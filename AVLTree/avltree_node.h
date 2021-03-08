@@ -10,9 +10,9 @@
 #define AVLTREE_NODE_H_
 
 
-struct BSTNode{
+struct AVLNode{
    int data;
-   struct BSTNode *left, *right;
+   struct AVLNode *left, *right;
 };
 
 #endif /* AVLTREE_NODE_H_ */

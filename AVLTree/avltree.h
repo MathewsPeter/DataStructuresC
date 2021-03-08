@@ -15,8 +15,8 @@
 //extern struct BSTNode* BSTHead;
 
 #include "binarysearchtree_node.h"
-extern void inordertraversal(struct BSTNode*);
-extern struct BSTNode* insert(struct BSTNode* , int);
-extern struct BSTNode* deleteNode(struct BSTNode* , int);
+extern void avl_inordertraversal(struct AVLNode*);
+extern struct AVLNode* avl_insertn(struct AVLNode* , int);
+extern struct AVLNode* avl_deleteNode(struct AVLNode* , int);
 
 #endif /* AVLTREE_H_ */
