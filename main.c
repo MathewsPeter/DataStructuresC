@@ -17,7 +17,8 @@
 #define ENABLE_QUEUEARR 0
 #define ENABLE_QUEUELL 0
 #define ENABLE_BINARYTREE 0
-#define ENABLE_BINARYSEARCHTREE 1
+#define ENABLE_BINARYSEARCHTREE 0
+#define ENABLE_AVLSEARCHTREE 1
 
 #include "Array/array.h"
 #include "LinkedList/linkedlist.h"
@@ -116,28 +117,28 @@ int main(void)
 	binarytree_printall();
 	#endif
 
-	#if ENABLE_BINARYSEARCHTREE == 1
-	printf("\n\nBinary Search Tree functions:\n");
-    #include"BinarySearchTree/binarysearchtree_node.h"
+	#if ENABLE_AVLSEARCHTREE == 1
+	printf("\n\nAVL Tree functions:\n");
+    #include"AVLTree/avltree_node.h"
     struct BSTNode *root = NULL;
-    root = bst_insertn(root, 1);
-    root = bst_insertn(root, 2);
-    root = bst_insertn(root, 3);
-    root = bst_insertn(root, 4);
-    root = bst_insertn(root, 5);
-    root = bst_insertn(root, 6);
-    root = bst_insertn(root, 7);
-    printf("Inorder traversal: ");   bst_inordertraversal(root);
-    printf("\nDelete 2\n");          root = bst_deleten(root, 2);
-    printf("Inorder traversal: ");   bst_inordertraversal(root);
-    printf("\nDelete 3\n");          root = bst_deleten(root, 3);
-    printf("Inorder traversal: ");   bst_inordertraversal(root);
-    printf("\nDelete 5\n");          root = bst_deleten(root, 5);
-    printf("Inorder traversal: ");   bst_inordertraversal(root);
-    printf("\nDelete 7\n");          root = bst_deleten(root, 7);
-    printf("Inorder traversal: ");   bst_inordertraversal(root);
-    printf("\nDelete 1\n");          root = bst_deleten(root, 1);
-    printf("Inorder traversal: ");   bst_inordertraversal(root);
+    root = avl_insertn(root, 1);
+    root = avl_insertn(root, 2);
+    root = avl_insertn(root, 3);
+    root = avl_insertn(root, 4);
+    root = avl_insertn(root, 5);
+    root = avl_insertn(root, 6);
+    root = avl_insertn(root, 7);
+    printf("Inorder traversal: ");   avl_inordertraversal(root);
+    printf("\nDelete 2\n");          root = avl_deleten(root, 2);
+    printf("Inorder traversal: ");   avl_inordertraversal(root);
+    printf("\nDelete 3\n");          root = avl_deleten(root, 3);
+    printf("Inorder traversal: ");   avl_inordertraversal(root);
+    printf("\nDelete 5\n");          root = avl_deleten(root, 5);
+    printf("Inorder traversal: ");   avl_inordertraversal(root);
+    printf("\nDelete 7\n");          root = avl_deleten(root, 7);
+    printf("Inorder traversal: ");   avl_inordertraversal(root);
+    printf("\nDelete 1\n");          root = avl_deleten(root, 1);
+    printf("Inorder traversal: ");   avl_inordertraversal(root);
 	#endif
 
 	return 1;

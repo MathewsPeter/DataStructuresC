@@ -69,12 +69,12 @@ if value n is present in the Binary Tree, delete it
 @param  n, the value to be deleted
 @return void
 */
-struct AVLNode* avl_deleteNode(struct AVLNode* root, int key)
+struct AVLNode* avl_deleten(struct AVLNode* root, int key)
 {	if (root == NULL) return root;
 	if (key < root->data)
-         root->left = avl_deleteNode(root->left, key);
+         root->left = avl_deleten(root->left, key);
 	else if (key > root->data)
-         root->right = avl_deleteNode(root->right, key);
+         root->right = avl_deleten(root->right, key);
 	else
 	{
       if (root->left == NULL)
@@ -91,7 +91,7 @@ struct AVLNode* avl_deleteNode(struct AVLNode* root, int key)
       }
       struct AVLNode* temp = avl_minValueNode(root->right);
       root->data = temp->data;
-      root->right = avl_deleteNode(root->right, temp->data);
+      root->right = avl_deleten(root->right, temp->data);
    }
    return root;
 }
