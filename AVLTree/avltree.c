@@ -20,7 +20,7 @@ struct AVLNode *newAVLNode(int n)
 /**
 Print all elements using in-order traversal method
 
-@param struct BSTNode* node - Recursively traversed node
+@param struct AVLNode* node - Recursively traversed node
 @return void
 */
 void avl_inordertraversal(struct AVLNode *root)
@@ -35,7 +35,7 @@ void avl_inordertraversal(struct AVLNode *root)
 /**
 Insert value n
 
-@param  struct BSTNode* node - Recursively traversed node
+@param  struct AVLNode* node - Recursively traversed node
 @param  n, the value to be inserted
 @return void
 

@@ -18,14 +18,33 @@
 #define ENABLE_QUEUELL 0
 #define ENABLE_BINARYTREE 0
 #define ENABLE_BINARYSEARCHTREE 0
-#define ENABLE_AVLSEARCHTREE 1
+#define ENABLE_AVLTREE 1
 
+#if ENABLE_ARRAY == 1
 #include "Array/array.h"
+#endif
+#if ENABLE_LINKEDLIST == 1
 #include "LinkedList/linkedlist.h"
+#endif
+#if ENABLE_STACKARR == 1
 #include "StackUsingArray/stack_using_array.h"
+#endif
+#if ENABLE_STACKLL == 1
+
+#endif
+#if ENABLE_QUEUE == 1
 #include "Queue/queue.h"
+#endif
+#if ENABLE_BINARYTREE == 1
 #include "BinaryTree/binarytree.h"
+#endif
+#if ENABLE_BINARYSEARCHTREE == 1
 #include "BinarySearchTree/binarysearchtree.h"
+#endif
+#if ENABLE_AVLTREE == 1
+#include "AVLTree/avltree.h"
+#endif
+
 
 int main(void)
 {
@@ -69,7 +88,7 @@ int main(void)
 	stackarr_pop();
 	#endif
 
-	#if ENABLE_STACARR == 1
+	#if ENABLE_STACKLL == 1
 	printf("\n\nStack(using LinkedList) functions:\n");
 	stackarr_push(1);
 	stackarr_pop();
@@ -117,7 +136,31 @@ int main(void)
 	binarytree_printall();
 	#endif
 
-	#if ENABLE_AVLSEARCHTREE == 1
+	#if ENABLE_BINARYSEARCHTREE == 1
+	printf("\n\nBinarySearchTree functions:\n");
+    #include"BinarySearchTreeTree/binarysearchtree_node.h"
+    struct BSTNode *root = NULL;
+    root = binarysearchtree_insertn(root, 1);
+    root = binarysearchtree_insertn(root, 2);
+    root = binarysearchtree_insertn(root, 3);
+    root = binarysearchtree_insertn(root, 4);
+    root = binarysearchtree_insertn(root, 5);
+    root = binarysearchtree_insertn(root, 6);
+    root = binarysearchtree_insertn(root, 7);
+    printf("Inorder traversal: ");   binarysearchtree_inordertraversal(root);
+    printf("\nDelete 2\n");          root = binarysearchtree_deleten(root, 2);
+    printf("Inorder traversal: ");   binarysearchtree_inordertraversal(root);
+    printf("\nDelete 3\n");          root = binarysearchtree_deleten(root, 3);
+    printf("Inorder traversal: ");   binarysearchtree_inordertraversal(root);
+    printf("\nDelete 5\n");          root = binarysearchtree_deleten(root, 5);
+    printf("Inorder traversal: ");   binarysearchtree_inordertraversal(root);
+    printf("\nDelete 7\n");          root = binarysearchtree_deleten(root, 7);
+    printf("Inorder traversal: ");   binarysearchtree_inordertraversal(root);
+    printf("\nDelete 1\n");          root = binarysearchtree_deleten(root, 1);
+    printf("Inorder traversal: ");   binarysearchtree_inordertraversal(root);
+	#endif
+
+	#if ENABLE_AVLTREE == 1
 	printf("\n\nAVL Tree functions:\n");
     #include"AVLTree/avltree_node.h"
     struct BSTNode *root = NULL;

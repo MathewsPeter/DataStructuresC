@@ -9,11 +9,6 @@
 #ifndef AVLTREE_H_
 #define AVLTREE_H_
 
-//extern struct BSTNode* binarysearchtree_insertn(struct BSTNode*, int);
-//extern void binarysearchtree_inordertraverse(struct BSTNode*);
-//extern struct BSTNode* binarysearchtree_deleten(struct BSTNode*, int);
-//extern struct BSTNode* BSTHead;
-
 #include "binarysearchtree_node.h"
 extern void avl_inordertraversal(struct AVLNode*);
 extern struct AVLNode* avl_insertn(struct AVLNode* , int);
