@@ -8,7 +8,7 @@ Enable or disable individual data strcuture using system constants in the main.c
 
                                 
 |	Data Structure|	 Access	|	 Search	|	 Insertion	|	 Deletion	|	 Access	|	 Search	|	 Insertion	|	 Deletion	|
-___________________________________________
+|	- |	 -	|	 -	|	 -	|	 -	|	 -	|	 -	|	 -	|	 -	|
 |	Array	|	 Θ(1)	|	 Θ(n)	|	 Θ(n)	|	 Θ(n)	|	 O(1)	|	 O(n)	|	 O(n)	|	 O(n)	|
 |	Stack	|	 Θ(n)	|	 Θ(n)	|	 Θ(1)	|	 Θ(1)	|	 O(n)	|	 O(n)	|	 O(1)	|	 O(1)	|
 |	Queue	|	 Θ(n)	|	 Θ(n)	|	 Θ(1)	|	 Θ(1)	|	 O(n)	|	 O(n)	|	 O(1)	|	 O(1)	|

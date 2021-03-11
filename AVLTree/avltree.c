@@ -6,9 +6,9 @@
  * API - function call - interfaces of Binary Search Tree in C language
  */
  
- #include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
-#include "avltree_node.h"
+#include"avltree_node.h"
 
 struct AVLNode *newAVLNode(int n)
 {  struct AVLNode *temp = (struct AVLNode *)malloc(sizeof(struct AVLNode));

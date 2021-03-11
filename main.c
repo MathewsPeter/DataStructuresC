@@ -163,7 +163,7 @@ int main(void)
 	#if ENABLE_AVLTREE == 1
 	printf("\n\nAVL Tree functions:\n");
     #include"AVLTree/avltree_node.h"
-    struct BSTNode *root = NULL;
+    struct AVLNode *root = NULL;
     root = avl_insertn(root, 1);
     root = avl_insertn(root, 2);
     root = avl_insertn(root, 3);

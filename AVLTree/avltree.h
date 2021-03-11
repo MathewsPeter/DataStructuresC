@@ -3,13 +3,13 @@
  * @author  Mathews Peter
  *
  * @section DESCRIPTION
- * Extern declarations of API - function call - interfaces of Binary Search Tree
+ * extern declarations of API - function call - interfaces of Binary Search Tree
  */
 
 #ifndef AVLTREE_H_
 #define AVLTREE_H_
 
-#include "binarysearchtree_node.h"
+#include "avltree_node.h"
 extern void avl_inordertraversal(struct AVLNode*);
 extern struct AVLNode* avl_insertn(struct AVLNode* , int);
 extern struct AVLNode* avl_deleten(struct AVLNode* , int);
