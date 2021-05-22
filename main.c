@@ -7,10 +7,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENABLE_ARRAY 0
-#define ENABLE_LINKEDLIST 0
-#define ENABLE_STACKARR 0
-#define ENABLE_STACKLL 0
+#define ENABLE_ARRAY 1
+#define ENABLE_LINKEDLIST 1
+#define ENABLE_STACKARR 1
+#define ENABLE_STACKLL 1
 
 #define ENABLE_QUEUE 0
 
