@@ -9,7 +9,7 @@ If balancing is not done explicitly, then the BST can become more of a linear da
 Best case: Such ordered arrangement allows faster searching.
 
 Advantages:
-
+ 
 Disadvantages:
 
 Operations:
