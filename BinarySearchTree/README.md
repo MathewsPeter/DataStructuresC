@@ -7,7 +7,7 @@ Left and right subtrees must also be a binary search trees.
 There are no duplicates.
 If balancing is not done explicitly, then the BST can become more of a linear data structure. (AVL rotation is solution)
 Best case: Such ordered arrangement allows faster searching.
-
+ 
 Advantages:
  
 Disadvantages:
