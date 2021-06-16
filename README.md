@@ -1,5 +1,5 @@
 # DataStructuresC
-DataStructures implemented in C.
+DataStructures implemented in C. 
 Array, Linkedlist, Stack, Queue, Binary Tree, Binary Search Tree
 
 Execute run.sh to run/test the functions
