@@ -33,6 +33,6 @@ rm -f binarysearchtree.o
 rm -f avltree.o
 rm -f a.out
 
-echo ""
-echo "Press Enter to close"
-read line
+#echo ""
+#echo "Press Enter to close"
+#read line
