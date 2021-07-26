@@ -1,6 +1,6 @@
 /**
  * @file array.c
- * @author  Mathews Peter
+ * @author Mathews Peter
  *
  * @section DESCRIPTION
  * Definitions of Array and it's interfaces
@@ -8,10 +8,12 @@
 
 #include <stdio.h>
 
-void array_insertni(int,int);//insert value n to index i
-void array_deleten(int);//if value n is present in the array, replace all occurrences with '\0'
-void array_printall(void);//print all elements in the array
-void array_fillall(int);//fill all positions in the array with a specific value
+int array_insertni(int,int);//insert value n to index i
+int array_deleten(int);//if value n is present in the array, replace all occurrences with '\0'
+int array_printall(void);//print all elements in the array
+int array_fillall(int);//fill all positions in the array with a specific value
+int array_geti(int);
+int array_deletei(int);
 
 #define array_size 5
 int array[array_size]={'\0'};
@@ -22,27 +24,31 @@ Insert value n to index i
 
 @param  n, the value to be inserted
 @param  i, the index at which the value should be inserted
-@return void
+@return 0 if success
+@return 1 if index overflow
 */
-void array_insertni(int n, int i)
-{    if(i < array_size)
-    {    array[i] = n;
+int array_insertni(int n, int i)
+{
+	if( (0 <= i) && (i < array_size) )
+    {   array[i] = n;
         printf("%d inserted at [%d]\n", n, i);
+        return 0;
     }
     else
-    {    printf("Error inserting %d: Index %d more than array array size is %d.\n",n, i, array_size);
+    {   printf("Error inserting %d at index %d. Array size is %d.\n",n, i, array_size);
+    	return 1;
     }
 }
 
 
 /**
-if value n is present in the array, replace all occurrences with '\0'
-Memory location cannot be deleted or removed at runtime.
+Replace all occurrences of n with '\0'
 
 @param  n, the value to be deleted
-@return void
+@return 0 if success
+@return 1 if n is not found
 */
-void array_deleten(int n)
+int array_deleten(int n)
 {
     int i;
     int flg_IsnDeleted=0;
@@ -57,7 +63,10 @@ void array_deleten(int n)
 
     if (flg_IsnDeleted == 0)
     {    printf("%d not found in array. Unable to delete\n",n);
+    	return 1;
     }
+    else
+    	return 0;
 }
 
 
@@ -65,16 +74,20 @@ void array_deleten(int n)
 Delete the value at index i
 
 @param  i, the index at which value should be made to NULL
-@return void
+@return 0 if success
+@return 1 if failure
 */
-void array_deletei(int i)
-{   if(i<0)
-        printf("Index %d should not be less than zero\n", i);
-    else if (i>=array_size)
-        printf("Index %d should not be more than array size\n", i);
-    else
-    {   array[i] = '\0';
+int array_deletei(int i)
+{
+	if(0 <= i && i < array_size)
+	{
+		array[i] = '\0';
         printf("Value at array index %d is deleted\n",i);
+        return 0;
+    }
+	else
+    {   printf("Error deleting the value index %d. Array size is %d.\n", i, array_size);
+    	return 1;
     }
 }
 
@@ -83,9 +96,9 @@ void array_deletei(int i)
 Print all elements in the array
 
 @param  void
-@return void
+@return 0
 */
-void array_printall(void)
+int array_printall(void)
 {
     int i;
     printf("Array[0 to %d]: [", array_size);
@@ -96,6 +109,7 @@ void array_printall(void)
             printf("NULL, ");
     }
     printf("]\n");
+    return 0;
 }
 
 
@@ -105,11 +119,36 @@ Fill all index positions in the array with a specific value
 @param  n, the value to be filled
 @return void
 */
-void array_fillall(int n)
+int array_fillall(int n)
 {
     int i;
     for(i=0;i<array_size;++i)
     {    array[i] = n;
     }
+
+    for(i=0;i<array_size;++i)
+    {    if(array[i] != n)
+	   	   return 1;
+    }
+
     printf("Array filled with %d\n", n);
+    return 0;
 }
+
+/**
+Return the value at a given index
+
+@param  n, the value to be filled
+@return void
+*/
+int array_geti(int i)
+{
+	if(i<array_size)
+		return array[i];
+	else
+		return 0;
+}
+
+
+
+

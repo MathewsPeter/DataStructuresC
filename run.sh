@@ -10,13 +10,13 @@ rm -f a.out
 clear
 
 gcc -Wall -g -c main.c
-gcc -Wall -g -c Array/array.c
-gcc -Wall -g -c LinkedList/linkedlist.c
-gcc -Wall -g -c StackUsingArray/stack_using_array.c
-gcc -Wall -g -c Queue/queue.c
-gcc -Wall -g -c BinaryTree/binarytree.c
-gcc -Wall -g -c BinarySearchTree/binarysearchtree.c
-gcc -Wall -g -c AVLTree/avltree.c
+gcc -Wall -g -c array.c
+gcc -Wall -g -c linkedlist.c
+gcc -Wall -g -c stack_using_array.c
+gcc -Wall -g -c queue.c
+gcc -Wall -g -c binarytree.c
+gcc -Wall -g -c binarysearchtree.c
+gcc -Wall -g -c avltree.c
 
 gcc -o a.out main.o array.o linkedlist.o stack_using_array.o queue.o binarytree.o binarysearchtree.o avltree.o
 

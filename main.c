@@ -1,16 +1,18 @@
 /*
- * 0_main.c
+ * main.c
  *
  *  Created on: 07-Feb-2021
  *      Author: Mathews Peter
  */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #define ENABLE_ARRAY 1
-#define ENABLE_LINKEDLIST 1
-#define ENABLE_STACKARR 1
-#define ENABLE_STACKLL 1
+#define ENABLE_LINKEDLIST 0
+#define ENABLE_STACKARR 0
+#define ENABLE_STACKLL 0
 
 #define ENABLE_QUEUE 0
 
@@ -18,31 +20,31 @@
 #define ENABLE_QUEUELL 0
 #define ENABLE_BINARYTREE 0
 #define ENABLE_BINARYSEARCHTREE 0
-#define ENABLE_AVLTREE 1
+#define ENABLE_AVLTREE 0
 
 #if ENABLE_ARRAY == 1
-#include "Array/array.h"
+#include "array.h"
 #endif
 #if ENABLE_LINKEDLIST == 1
-#include "LinkedList/linkedlist.h"
+#include "linkedlist.h"
 #endif
 #if ENABLE_STACKARR == 1
-#include "StackUsingArray/stack_using_array.h"
+#include "stack_using_array.h"
 #endif
 #if ENABLE_STACKLL == 1
 
 #endif
 #if ENABLE_QUEUE == 1
-#include "Queue/queue.h"
+#include "queue.h"
 #endif
 #if ENABLE_BINARYTREE == 1
-#include "BinaryTree/binarytree.h"
+#include "binarytree.h"
 #endif
 #if ENABLE_BINARYSEARCHTREE == 1
-#include "BinarySearchTree/binarysearchtree.h"
+#include "binarysearchtree.h"
 #endif
 #if ENABLE_AVLTREE == 1
-#include "AVLTree/avltree.h"
+#include "avltree.h"
 #endif
 
 
@@ -50,15 +52,21 @@ int main(void)
 {
 	#if ENABLE_ARRAY == 1
 	printf("\n\nArray functions:\n");
-	array_fillall(200);
-	array_printall();
-	array_insertni(13,0);
-	array_insertni(45,1);
-	array_insertni(99,2);
-	array_printall();
-	array_deleten(13);
-	array_deleten(13);
-	array_printall();
+	assert(array_fillall(200) == 0);
+	assert(array_insertni(13,0) == 0);
+	assert(array_insertni(45,1) == 0);
+	assert(array_insertni(99,2) == 0);
+	assert(array_insertni(199,5)== 1);
+	assert(array_geti(0)==13 );
+	assert(array_geti(1)==45 );
+	assert(array_geti(2)==99 );
+	assert(array_geti(3)==200);
+	assert(array_geti(4)==200);
+	assert(array_deleten(13) == 0);
+	assert(array_deleten(13) == 1);
+	assert(array_deletei(5) == 1);
+	assert(array_deletei(4) == 0);
+	assert(array_printall() == 0);
 	printf("\n\n");
 	#endif
 
