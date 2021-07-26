@@ -10,9 +10,10 @@
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
 
-void linkedlist_insertleft(int);
-void linkedlist_insertright(int);
-void linkedlist_printall(void);
-void linkedlist_length(void);
+int linkedlist_insertleft(int);
+int linkedlist_insertright(int);
+int linkedlist_printall(void);
+int linkedlist_length(void);
+int linkedlist_deleten(int);
 
 #endif /* LINKEDLIST_H_ */

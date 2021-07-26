@@ -10,7 +10,7 @@
 #include <assert.h>
 
 #define ENABLE_ARRAY 1
-#define ENABLE_LINKEDLIST 0
+#define ENABLE_LINKEDLIST 1
 #define ENABLE_STACKARR 0
 #define ENABLE_STACKLL 0
 
@@ -71,12 +71,16 @@ int main(void)
 	#endif
 
 	#if ENABLE_LINKEDLIST == 1
-	linkedlist_length();
-	linkedlist_insertleft(2);
-	linkedlist_insertleft(1);
-	linkedlist_length();
-	linkedlist_insertright(3);
-	linkedlist_printall();
+	assert(linkedlist_length() == 0);
+	assert(linkedlist_insertleft(2) == 0);
+	assert(linkedlist_insertleft(1) == 0);
+	assert(linkedlist_length() == 2);
+	assert(linkedlist_insertright(3) == 0);
+	assert(linkedlist_printall() == 0);
+	assert(linkedlist_deleten(3) == 0);
+	assert(linkedlist_deleten(2) == 0);
+	assert(linkedlist_deleten(1) == 0);
+	assert(linkedlist_printall() == 0);
 	#endif
 
 	#if ENABLE_STACKARR == 1
