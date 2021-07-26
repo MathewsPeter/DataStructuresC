@@ -2,7 +2,8 @@
 DataStructures implemented in C. 
 Array, Linkedlist, Stack, Queue, Binary Tree, Binary Search Tree
 
-Execute run.sh to run/test the functions
+Execute run.sh to run/test the functions or use makefile to compile.
+testcases are asserted in the main function, to follow TestDrivenDevelopement concept.
 Enable or disable individual data strcuture using system constants in the main.c file
 
 
